@@ -10,6 +10,9 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
+const journalRoutes = require("./routes/journal")
+app.use("/", journalRoutes)
+
 app.get("/", (req,res)=>{
     res.send("Hello Server")
 })
